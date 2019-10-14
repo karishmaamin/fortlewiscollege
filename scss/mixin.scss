@@ -1,0 +1,33 @@
+$lgtablet-width: 769px;
+$phone:480px;
+$desktop-width: 1025px;
+
+
+@mixin background($value1,$value2)
+{
+    background:$backgroundBlue;
+    color:$textColorWhite;
+    padding: $value1 $value2;
+}
+
+
+@mixin lgtablet {
+  @media (min-width: #{$lgtablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin smtablet {
+  @media (min-width: #{$phone}) and (max-width: #{$lgtablet-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+  @mixin mobile {
+    @media (max-width: #{$phone - 1px}) {
+      @content;
+    }
+  }
